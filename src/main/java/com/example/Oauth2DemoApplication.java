@@ -29,22 +29,15 @@ public class Oauth2DemoApplication extends WebMvcConfigurerAdapter {
 
 @Configuration
 @EnableAuthorizationServer
-@EnableConfigurationProperties({RedisAutoConfiguration.class})
-@Import({ RedisAutoConfiguration.class })
 class AuthotizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
 	@Autowired
-	RedisConnectionFactory redisConnectionFactory;
-
-	@Bean
-	public TokenStore tokenStore() {
-		return new RedisTokenStore(redisConnectionFactory);
-	}
+	private TokenStore tokenStore;
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		System.out.println("Using TokenStore: " + tokenStore().toString());
-		endpoints.tokenStore(tokenStore());
+		System.out.println("Using TokenStore: " + tokenStore.toString());
+		endpoints.tokenStore(tokenStore);
 	}
 
 	@Override
