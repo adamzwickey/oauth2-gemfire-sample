@@ -29,7 +29,7 @@ mvn clean spring-boot:run
 * Access your application in a browser window at the following URL: http://localhost:9999/uaa/oauth/authorize?response_type=code&client_id=acme&redirect_uri=http://example.com  If prompted for authentication use user/password
 
 * Authorize the request:
-[Image](/img.png "Image")
+![Image](/img.png "Image")
 
 * Once you have authenticated you will get a redirect to example.com with an authorization code attached, e.g. http://example.com/?code=jYWioI.  The code can be exchanged for an access token using the "acme" client credentials on the token endpoint. Substitute the code in the redirect for $CODE.  Your OAuth tokens will be returned
 ```
