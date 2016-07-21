@@ -29,6 +29,7 @@ mvn clean spring-boot:run
 * Access your application in a browser window at the following URL: [http://localhost:9999/uaa/oauth/authorize?response_type=code&client_id=acme&redirect_uri=http://example.com](http://localhost:9999/uaa/oauth/authorize?response_type=code&client_id=acme&redirect_uri=http://example.com) If prompted for authentication use user/password
 
 * Authorize the request:
+
 ![alt text][img]
 
 [img]: /img.png "Image"
