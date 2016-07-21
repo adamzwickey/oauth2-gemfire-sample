@@ -31,7 +31,7 @@ mvn clean spring-boot:run
 * Authorize the request:
 ![alt text][img]
 
-[logo]: /img.png "Image"
+[img]: /img.png "Image"
 
 * Once you have authenticated you will get a redirect to example.com with an authorization code attached, e.g. http://example.com/?code=jYWioI.  The code can be exchanged for an access token using the "acme" client credentials on the token endpoint. Substitute the code in the redirect for $CODE.  Your OAuth tokens will be returned
 ```
