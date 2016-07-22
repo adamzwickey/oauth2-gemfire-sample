@@ -1,5 +1,7 @@
 package com.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +15,7 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -31,12 +34,14 @@ public class Oauth2DemoApplication extends WebMvcConfigurerAdapter {
 @EnableAuthorizationServer
 class AuthotizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
+	Logger LOG = LoggerFactory.getLogger(AuthotizationServerConfiguration.class);
+
 	@Autowired
 	private TokenStore tokenStore;
 
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		System.out.println("Using TokenStore: " + tokenStore.toString());
+		LOG.info("Using TokenStore: " + tokenStore.toString());
 		endpoints.tokenStore(tokenStore);
 	}
 
