@@ -1,9 +1,6 @@
 package com.example;
 
-import com.gemstone.gemfire.cache.Region;
 import org.springframework.data.gemfire.GemfireTemplate;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.connection.StringRedisConnection;
 import org.springframework.security.oauth2.common.ExpiringOAuth2RefreshToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2RefreshToken;
