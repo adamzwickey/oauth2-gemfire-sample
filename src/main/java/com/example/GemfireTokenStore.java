@@ -56,8 +56,6 @@ public class GemfireTokenStore implements TokenStore {
         String approvalKey = UNAME_TO_ACCESS + getApprovalKey(authentication);
         String clientId = CLIENT_ID_TO_ACCESS + authentication.getOAuth2Request().getClientId();
 
-
-
         gemfireTemplate.put(accessKey, token);
         gemfireTemplate.put(authKey, authentication);
         gemfireTemplate.put(authToAccessKey, token);
